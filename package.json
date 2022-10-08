@@ -25,13 +25,17 @@
     {
       "name": "Stanimira Vlaeva",
       "url": "https://github.com/sis0k0"
+    },
+    {
+      "name": "Ovais Tariq",
+      "url": "https://github.com/ovaistariq"
     }
   ],
   "license": "Apache 2.0",
-  "homepage": "https://github.com/mongodb-developer/mean-stack-example#readme",
+  "homepage": "https://github.com/tigrisdata/mean-stack-example#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mongodb-developer/mean-stack-example.git"
+    "url": "https://github.com/tigrisdata/mean-stack-example.git"
   },
   "devDependencies": {
     "concurrently": "^7.1.0"

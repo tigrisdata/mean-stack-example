@@ -4,17 +4,20 @@ import express from "express";
 import { connectToDatabase } from "./database";
 import { employeeRouter } from "./employee.routes";
 
-// Load environment variables from the .env file, where the ATLAS_URI is configured
+// Load environment variables from the .env file, where the TIGRIS_URI is configured
 dotenv.config();
 
-const { ATLAS_URI } = process.env;
+const { TIGRIS_URI } = process.env;
 
-if (!ATLAS_URI) {
-    console.error("No ATLAS_URI environment variable has been defined in config.env");
+if (!TIGRIS_URI) {
+    console.error("No TIGRIS_URI environment variable has been defined in config.env");
     process.exit(1);
 }
 
-connectToDatabase(ATLAS_URI)
+const CLIENT_ID = process.env.TIGRIS_CLIENT_ID || undefined;
+const CLIENT_SECRET = process.env.TIGRIS_CLIENT_SECRET || undefined;
+
+connectToDatabase(TIGRIS_URI, CLIENT_ID, CLIENT_SECRET)
     .then(() => {
         const app = express();
         app.use(cors());
