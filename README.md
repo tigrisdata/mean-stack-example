@@ -12,39 +12,13 @@ ground up._
 
 ![Demonstration of the web application](demo.gif)
 
-## How to run it with Tigris dev environment
-
-1. Install the `tigris` CLI which provides a full featured local development 
-environment:
-
-    ```shell
-    brew install tigrisdata/tigris/tigris-cli
-    ```
-
-    For other platforms, installation instructions can be found
-    [here](https://docs.tigrisdata.com/cli/installation).
-
-2. Start the Tigris local development environment:
-
-    ```shell
-    tigris dev start
-    ```
-   
-    Now you have a locally running Tigris available on port 8081.
-
-3. Start the server and client applications:
-    ```
-    npm start
-    ```
-
-When both applications are built and running, open your browser on http://localhost:4200/.
-
-## How to run it with Tigris Cloud
+## How to run it
 
 1. Sign up for Tigris Cloud [here](https://www.tigrisdata.com/beta#signup-form).
-2. Fetch the Tigris UI and credentials, check out this 
-[video](https://youtu.be/Ls50EOrU3AQ).
-3. Set your Tigris URI and credentials as parameters in `server/.env`. Make 
+2. Generate application credentials, which will be used by the app to 
+   connect and authenticate with Tigris Cloud. Check out this
+   [video](https://youtu.be/Ls50EOrU3AQ). 
+3. Set your application credentials as parameters in `server/.env`. Make 
    sure the following environment variables are set: `TIGRIS_URI`, 
    `TIGRIS_CLIENT_ID`, `TIGRIS_CLIENT_SECRET`.
 4. Start the server and client applications:

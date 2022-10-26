@@ -6,26 +6,10 @@ export const collections: {
 } = {};
 
 export async function connectToDatabase(uri: string, clientId?: string, clientSecret?: string) {
-    const config = getClientConfig(uri, clientId, clientSecret);
-    const client = new Tigris(config);
+    const client = new Tigris({serverUrl: uri, clientId: clientId, clientSecret: clientSecret});
 
     const db = await client.createDatabaseIfNotExists("meanStackExample");
 
     // A strongly typed collection is created using the data model and no additional JSON schema validation is needed
     collections.employees = await db.createOrUpdateCollection<Employee>("employees", employeeSchema);
-}
-
-function getClientConfig(uri: string, clientId?: string, clientSecret?: string): TigrisClientConfig {
-    const config: TigrisClientConfig = {
-        serverUrl: uri
-    }
-
-    if (clientId === undefined || clientSecret === undefined) {
-        config["insecureChannel"] = true;
-    } else {
-        config["clientId"] = clientId;
-        config["clientSecret"] = clientSecret;
-    }
-
-    return config;
 }
