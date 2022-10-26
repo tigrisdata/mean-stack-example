@@ -13,7 +13,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
-    "@tigrisdata/core": "^1.0.0-beta.8"
+    "@tigrisdata/core": "^1.0.0-beta.12"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",
